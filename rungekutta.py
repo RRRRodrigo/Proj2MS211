@@ -29,7 +29,7 @@ for i in range(1,n):
     K2 = deltax * func_res1
     func_res1 = c1*(u1[i-1] + K2/2) - d1*(u1[i-1] + K2/2)*(u2[i-1] + deltax/2)
     K3 = deltax * func_res1
-    func_res1 = c1*(u1[i-1] + K3) - d1*(u1[i-1] + K3)*(u2[i-1] + deltax)
+    func_res1 = c1*(u1[i-1] + K3 * deltax) - d1*(u1[i-1] + K3 * deltax)*(u2[i-1] + deltax)
     K4 = deltax * func_res1
     u1[i] = u1[i-1] + K1/6 + K2/3 + K3/3 + K4/6
     func_res2 = c2*u1[i-1]*u2[i-1] - d2*u2[i-1]
@@ -38,7 +38,7 @@ for i in range(1,n):
     K2 = deltax * func_res2
     func_res2 = c2*(u1[i-1] + deltax/2)*(u2[i-1] + K2/2) - d2*(u2[i-1] + K2/2)
     K3 = deltax * func_res2
-    func_res2 = c2*(u1[i-1] + deltax)*(u2[i-1] + K3) - d2*(u2[i-1] + K3)
+    func_res2 = c2*(u1[i-1] + deltax)*(u2[i-1] + K3 * deltax) - d2*(u2[i-1] + K3 * deltax)
     K4 = deltax * func_res2
     u2[i] = u2[i-1] + K1/6 + K2/3 + K3/3 + K4/6
 
